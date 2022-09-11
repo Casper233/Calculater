@@ -1,4 +1,6 @@
-﻿namespace Calculater
+﻿using System;
+
+namespace Calculater
 {
     partial class Form1
     {
@@ -52,7 +54,7 @@
             // 
             this.lblResult.AutoSize = true;
             this.lblResult.Font = new System.Drawing.Font("微软雅黑", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblResult.Location = new System.Drawing.Point(35, 69);
+            this.lblResult.Location = new System.Drawing.Point(34, 69);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(82, 42);
             this.lblResult.TabIndex = 0;
@@ -80,7 +82,7 @@
             // btn1
             // 
             this.btn1.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
-            this.btn1.Location = new System.Drawing.Point(42, 175);
+            this.btn1.Location = new System.Drawing.Point(42, 176);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(158, 68);
             this.btn1.TabIndex = 3;
@@ -91,7 +93,7 @@
             // btn2
             // 
             this.btn2.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
-            this.btn2.Location = new System.Drawing.Point(248, 175);
+            this.btn2.Location = new System.Drawing.Point(248, 176);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(158, 68);
             this.btn2.TabIndex = 4;
@@ -102,7 +104,7 @@
             // btn3
             // 
             this.btn3.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
-            this.btn3.Location = new System.Drawing.Point(452, 175);
+            this.btn3.Location = new System.Drawing.Point(452, 176);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(158, 68);
             this.btn3.TabIndex = 5;
@@ -190,9 +192,9 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
-            this.btnClear.Location = new System.Drawing.Point(452, 43);
+            this.btnClear.Location = new System.Drawing.Point(452, 44);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(158, 109);
+            this.btnClear.Size = new System.Drawing.Size(158, 110);
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "清空";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -212,7 +214,7 @@
             // btnSub
             // 
             this.btnSub.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
-            this.btnSub.Location = new System.Drawing.Point(646, 175);
+            this.btnSub.Location = new System.Drawing.Point(646, 176);
             this.btnSub.Name = "btnSub";
             this.btnSub.Size = new System.Drawing.Size(117, 110);
             this.btnSub.TabIndex = 15;
@@ -265,6 +267,7 @@
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblResult);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "计算器";
             this.ResumeLayout(false);
@@ -292,6 +295,7 @@
         private System.Windows.Forms.Button btnSub;
         private System.Windows.Forms.Button btnMul;
         private System.Windows.Forms.Button btnDiv;
+        private EventHandler txtResult_TextChanged;
     }
 }
 

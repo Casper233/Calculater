@@ -103,44 +103,59 @@ namespace Calculater
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            Single result;
+            double result;
             string text = txtResult.Text;
-            int space = text.IndexOf(" ");
-            string re1 = text.Substring(0, space);
-            char op = Convert.ToChar(text.Substring(space + 1, 1));
-            string re2 = text.Substring(space + 3);
-            Single arg1 = Convert.ToSingle(re1);
-            Single arg2 = Convert.ToSingle(re2);
-            switch (op)
+            int space = 0;
+            space = text.IndexOf(" ");
+            if (space >= 0)
             {
-                case '+':
-                    result = arg1 + arg2;
-                    break;
-                case '-':
-                    result = arg1 - arg2;
-                    break;
-                case '*':
-                    result = arg1 * arg2;
-                    break;
-                case '/':
-                    if (arg2 == 0)
+                string re1 = text.Substring(0, space);
+                char op = Convert.ToChar(text.Substring(space + 1, 1));
+                string re2 = text.Substring(space + 3);
+                string empty = string.Empty;
+                if (re2 == "")
+                {
+                    txtResult.Text = txtResult.Text;
+                }
+                else
+                {
+                    switch (op)
                     {
-                        throw new ApplicationException();
+                        case '+':
+                            result = (double)Convert.ToSingle(re1) + (double)Convert.ToSingle(re2);
+                            break;
+                        case '-':
+                            result = (double)Convert.ToSingle(re1) - (double)Convert.ToSingle(re2);
+                            break;
+                        case '*':
+                            result = (double)Convert.ToSingle(re1) * (double)Convert.ToSingle(re2);
+                            break;
+                        case '/':
+                            if ((double)Convert.ToSingle(re2) == 0)
+                            {
+                                throw new ApplicationException();
+                            }
+                            else
+                            {
+                                result = (double)Convert.ToSingle(re1) / (double)Convert.ToSingle(re2);
+                            }
+                            break;
+                        default:
+                            throw new ApplicationException();
                     }
-                    else
-                    {
-                        result = arg1 / arg2;
-                    }
-                    break;
-                default:
-                    throw new ApplicationException();
+                    txtResult.Text = result.ToString();
+                }
             }
-            txtResult.Text = result.ToString();
+            else
+            {
+                txtResult.Text = txtResult.Text;
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtResult.Text = " ";
         }
+
     }
 }
