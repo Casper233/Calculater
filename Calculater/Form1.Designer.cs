@@ -2,7 +2,7 @@
 
 namespace Calculater
 {
-    partial class Form1
+    partial class CalculaterForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -55,19 +55,20 @@ namespace Calculater
             // 
             this.lblResult.AutoSize = true;
             this.lblResult.Font = new System.Drawing.Font("微软雅黑", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblResult.Location = new System.Drawing.Point(21, 18);
+            this.lblResult.Location = new System.Drawing.Point(35, 42);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(82, 42);
+            this.lblResult.Size = new System.Drawing.Size(222, 42);
             this.lblResult.TabIndex = 0;
-            this.lblResult.Text = "结果";
+            this.lblResult.Text = "结果 Answer:";
+            this.lblResult.Click += new System.EventHandler(this.lblResult_Click);
             // 
             // txtResult
             // 
             this.txtResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtResult.Font = new System.Drawing.Font("微软雅黑", 28F, System.Drawing.FontStyle.Bold);
-            this.txtResult.Location = new System.Drawing.Point(42, 71);
+            this.txtResult.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Bold);
+            this.txtResult.Location = new System.Drawing.Point(42, 92);
             this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(364, 81);
+            this.txtResult.Size = new System.Drawing.Size(364, 60);
             this.txtResult.TabIndex = 1;
             // 
             // btnCalculate
@@ -77,7 +78,7 @@ namespace Calculater
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(251, 68);
             this.btnCalculate.TabIndex = 2;
-            this.btnCalculate.Text = "计算";
+            this.btnCalculate.Text = "计算 Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
@@ -198,7 +199,7 @@ namespace Calculater
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(158, 110);
             this.btnClear.TabIndex = 13;
-            this.btnClear.Text = "清空";
+            this.btnClear.Text = "清空 Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -257,7 +258,7 @@ namespace Calculater
             this.btnDot.UseVisualStyleBackColor = true;
             this.btnDot.Click += new System.EventHandler(this.btnDot_Click);
             // 
-            // Form1
+            // CalculaterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -282,8 +283,8 @@ namespace Calculater
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblResult);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
-            this.Text = "计算器";
+            this.Name = "CalculaterForm";
+            this.Text = "计算器 Calculater";
             this.ResumeLayout(false);
             this.PerformLayout();
 

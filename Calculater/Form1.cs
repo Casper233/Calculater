@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Calculater
 {
-    public partial class Form1 : Form
+    public partial class CalculaterForm : Form
     {
-        public Form1()
+        public CalculaterForm()
         {
             InitializeComponent();
         }
@@ -109,42 +109,104 @@ namespace Calculater
             space = text.IndexOf(" ");
             if (space >= 0)
             {
-                string re1 = text.Substring(0, space);
-                char op = Convert.ToChar(text.Substring(space + 1, 1));
-                string re2 = text.Substring(space + 3);
-                string empty = string.Empty;
-                if (re2 == "")
+                if (space == 0)
                 {
-                    txtResult.Text = txtResult.Text;
+                    string re1 = text.Substring(0, space);
+                    char op = Convert.ToChar(text.Substring(space + 1, 1));
+                    string re2 = text.Substring(space + 3);
+                    string empty = string.Empty;
+                    if (re2 == "")
+                    {
+                        txtResult.Text = txtResult.Text;
+                    }
+                    else
+                    {
+                        switch (op)
+                        {
+                            case '+':
+                                result = (double)Convert.ToSingle(re1) + (double)Convert.ToSingle(re2);
+                                txtResult.Text = result.ToString();
+                                break;
+                            case '-':
+                                result = (double)Convert.ToSingle(re1) - (double)Convert.ToSingle(re2);
+                                txtResult.Text = result.ToString();
+                                break;
+                            case '*':
+                                result = (double)Convert.ToSingle(re1) * (double)Convert.ToSingle(re2);
+                                txtResult.Text = result.ToString();
+                                break;
+                            case '/':
+                                if ((double)Convert.ToSingle(re2) == 0)
+                                {
+                                    MessageBox.Show("除数不可为0   Divisor cannot be 0", "错误E0 Error-E0", MessageBoxButtons.OK);
+                                    //throw new ApplicationException();
+                                }
+                                else
+                                {
+                                    result = (double)Convert.ToSingle(re1) / (double)Convert.ToSingle(re2);
+                                    txtResult.Text = result.ToString();
+                                }
+                                break;
+                            default:
+                                throw new ApplicationException("输入表达式错误 FormatException");
+                                //MessageBox.Show("除数不可为0", "错误E0", MessageBoxButtons.OK);
+                        }
+                    }
                 }
                 else
                 {
-                    switch (op)
+                    /*if (space == 1)
                     {
-                        case '+':
-                            result = (double)Convert.ToSingle(re1) + (double)Convert.ToSingle(re2);
-                            break;
-                        case '-':
-                            result = (double)Convert.ToSingle(re1) - (double)Convert.ToSingle(re2);
-                            break;
-                        case '*':
-                            result = (double)Convert.ToSingle(re1) * (double)Convert.ToSingle(re2);
-                            break;
-                        case '/':
-                            if ((double)Convert.ToSingle(re2) == 0)
+                        string re1 = text.Substring(0, space);
+                        char op = Convert.ToChar(text.Substring(space + 1, 1));
+                        string re2 = text.Substring(space + 3);
+                        char op2 = Convert.ToChar(text.Substring(space + 5, 6));
+                        string re3 = text.Substring(space + 6);
+                        string empty = string.Empty;
+                        if (re3 == "")
+                        {
+                            txtResult.Text = txtResult.Text;
+                        }
+                        else
+                        {
+                            int i;
+                            for (i = 0; i <= 2; i++)
                             {
-                                throw new ApplicationException();
+                                switch (op)
+                                {
+                                    case '+':
+                                        result = (double)Convert.ToSingle(re1) + (double)Convert.ToSingle(re2);
+                                        txtResult.Text = result.ToString();
+                                        break;
+                                    case '-':
+                                        result = (double)Convert.ToSingle(re1) - (double)Convert.ToSingle(re2);
+                                        txtResult.Text = result.ToString();
+                                        break;
+                                    case '*':
+                                        result = (double)Convert.ToSingle(re1) * (double)Convert.ToSingle(re2);
+                                        txtResult.Text = result.ToString();
+                                        break;
+                                    case '/':
+                                        if ((double)Convert.ToSingle(re2) == 0)
+                                        {
+                                            MessageBox.Show("除数不可为0   Divisor cannot be 0", "错误E0 Error-E0", MessageBoxButtons.OK);
+                                            //throw new ApplicationException();
+                                        }
+                                        else
+                                        {
+                                            result = (double)Convert.ToSingle(re1) / (double)Convert.ToSingle(re2);
+                                            txtResult.Text = result.ToString();
+                                        }
+                                        break;
+                                    default:
+                                        throw new ApplicationException("输入表达式错误 FormatException");
+                                        //MessageBox.Show("除数不可为0", "错误E0", MessageBoxButtons.OK);
+                                }
                             }
-                            else
-                            {
-                                result = (double)Convert.ToSingle(re1) / (double)Convert.ToSingle(re2);
-                            }
-                            break;
-                        default:
-                            throw new ApplicationException();
+                        }
                     }
-                    txtResult.Text = result.ToString();
-                }
+                    */
+                }    
             }
             else
             {
@@ -161,6 +223,11 @@ namespace Calculater
         {
             Button btn = (Button)sender;
             txtResult.Text += btn.Text;
+        }
+
+        private void lblResult_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
