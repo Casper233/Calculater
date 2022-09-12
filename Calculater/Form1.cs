@@ -157,5 +157,10 @@ namespace Calculater
             txtResult.Text = " ";
         }
 
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            txtResult.Text += btn.Text;
+        }
     }
 }

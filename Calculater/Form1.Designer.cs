@@ -48,13 +48,14 @@ namespace Calculater
             this.btnSub = new System.Windows.Forms.Button();
             this.btnMul = new System.Windows.Forms.Button();
             this.btnDiv = new System.Windows.Forms.Button();
+            this.btnDot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblResult
             // 
             this.lblResult.AutoSize = true;
             this.lblResult.Font = new System.Drawing.Font("微软雅黑", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblResult.Location = new System.Drawing.Point(34, 69);
+            this.lblResult.Location = new System.Drawing.Point(21, 18);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(82, 42);
             this.lblResult.TabIndex = 0;
@@ -62,18 +63,19 @@ namespace Calculater
             // 
             // txtResult
             // 
-            this.txtResult.Font = new System.Drawing.Font("微软雅黑", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtResult.Location = new System.Drawing.Point(150, 51);
+            this.txtResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResult.Font = new System.Drawing.Font("微软雅黑", 28F, System.Drawing.FontStyle.Bold);
+            this.txtResult.Location = new System.Drawing.Point(42, 71);
             this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(256, 76);
+            this.txtResult.Size = new System.Drawing.Size(364, 81);
             this.txtResult.TabIndex = 1;
             // 
             // btnCalculate
             // 
             this.btnCalculate.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCalculate.Location = new System.Drawing.Point(248, 476);
+            this.btnCalculate.Location = new System.Drawing.Point(359, 476);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(362, 68);
+            this.btnCalculate.Size = new System.Drawing.Size(251, 68);
             this.btnCalculate.TabIndex = 2;
             this.btnCalculate.Text = "计算";
             this.btnCalculate.UseVisualStyleBackColor = true;
@@ -244,11 +246,23 @@ namespace Calculater
             this.btnDiv.UseVisualStyleBackColor = true;
             this.btnDiv.Click += new System.EventHandler(this.btnDiv_Click);
             // 
+            // btnDot
+            // 
+            this.btnDot.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
+            this.btnDot.Location = new System.Drawing.Point(248, 476);
+            this.btnDot.Name = "btnDot";
+            this.btnDot.Size = new System.Drawing.Size(71, 68);
+            this.btnDot.TabIndex = 18;
+            this.btnDot.Text = ".";
+            this.btnDot.UseVisualStyleBackColor = true;
+            this.btnDot.Click += new System.EventHandler(this.btnDot_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 578);
+            this.Controls.Add(this.btnDot);
             this.Controls.Add(this.btnDiv);
             this.Controls.Add(this.btnMul);
             this.Controls.Add(this.btnSub);
@@ -296,6 +310,7 @@ namespace Calculater
         private System.Windows.Forms.Button btnMul;
         private System.Windows.Forms.Button btnDiv;
         private EventHandler txtResult_TextChanged;
+        private System.Windows.Forms.Button btnDot;
     }
 }
 
