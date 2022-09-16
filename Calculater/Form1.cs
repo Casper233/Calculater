@@ -109,7 +109,7 @@ namespace Calculater
             space = text.IndexOf(" ");
             if (space >= 0)
             {
-                if (space == 0)
+                if (space >= 0)
                 {
                     string re1 = text.Substring(0, space);
                     char op = Convert.ToChar(text.Substring(space + 1, 1));
